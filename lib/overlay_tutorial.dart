@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 part 'src/overlay_tutorial_controller.dart';
-
 part 'src/overlay_tutorial_entry.dart';
 
 /// Widget for displaying an overlay on top of UI. Provide [OverlayTutorialEntry]
@@ -242,8 +241,9 @@ class _TutorialPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
+    final screenSize = MediaQuery.of(context).size;
+    final screenWidth = screenSize.width;
+    final screenHeight = screenSize.height;
 
     var path = Path()..addRect(Rect.fromLTWH(0, 0, screenWidth, screenHeight));
 
